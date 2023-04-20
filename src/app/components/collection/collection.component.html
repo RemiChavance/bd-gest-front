@@ -1,0 +1,18 @@
+<div *ngIf="collection$ | async as collection">
+    <div id="partage">
+        <h3>Votre collection</h3>
+        <button (click)="onShowModal()" >Partage</button>        
+    </div>
+    <app-bd-list [bds]="collection" [isCollection]="true"></app-bd-list>
+</div>
+
+<dialog [open]="showModal">
+  <article>
+    <div>
+      <h3>Lien de partage</h3>
+      <qrcode [qrdata]="link" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+      <a (click)="onClickOnSharedLink()">{{ link }}</a>
+      <button id="buttonclose" (click)="onShowModal()">Fermer</button>
+    </div>
+  </article>
+</dialog>

@@ -1,0 +1,33 @@
+<article>
+    <body (click)="onClick()">
+        <img [src]="'data:image/png;base64, ' + bd.image">
+    </body>
+    <footer>
+        {{ bd.title }}
+        <button *ngIf="!shared; else elseButton" (click)="onShowShareModal()">Prêter</button>
+
+        <ng-template #elseButton>
+            <button (click)="onShowReturnModal()">Rendu ?</button>
+        </ng-template>
+    </footer>
+</article>
+
+<dialog [open]="showShareModal">
+    <article>
+        <h3>Voulez vous marquer cette BD comme prêtée ?</h3>
+        <footer>
+            <button class="modal secondary" (click)="onShowShareModal()">Non</button>
+            <button class="modal" (click)="onMarkAsShared()">Oui</button>
+        </footer>
+    </article>
+</dialog>
+
+<dialog [open]="showReturnModal">
+    <article>
+        <h3>Cette BD vous à été rendu ?</h3>
+        <footer>
+            <button class="modal secondary" (click)="onShowReturnModal()">Non</button>
+            <button class="modal" (click)="onMarkAsReturned()">Oui</button>
+        </footer>
+    </article>
+</dialog>

@@ -1,0 +1,28 @@
+<div class="box">
+    <h1>Accueil</h1>
+    <app-search></app-search>
+</div>
+
+<div *ngIf="user; else elseblock" class="followBox">
+    <div>
+        <h3>Vos Auteurs suivis</h3>
+        <ul>
+            <li *ngFor="let author of followedAuthors$ | async">
+                <a (click)="onAuthor(author.id)">{{author.name }}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Vos Séries suivies</h3>
+        <ul>
+            <li *ngFor="let serie of followedSeries$ | async">
+                <a (click)="onSerie(serie.id)">{{serie.title }}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<ng-template #elseblock >
+    <app-bd-list *ngIf="bds$ | async as bds" [bds]="bds"></app-bd-list>
+</ng-template>

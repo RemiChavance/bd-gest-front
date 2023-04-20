@@ -1,0 +1,27 @@
+<article>
+    <h1>Inscription</h1>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmitForm()" ngNativeValidate>
+        <fieldset>
+            <label for="username">
+                Nom d'utilisateur
+                <input type="text" formControlName="username" id="username" name="username" placeholder="Nom d'utilisateur" required>
+            </label>
+
+            <label for="email">
+                Email
+                <input type="email" formControlName="email" [attr.aria-invalid]="emailInvalid$ | async" id="email" name="email" placeholder="Email adress" required>
+            </label>
+
+            <label for="password">
+                Mot de passe
+                <input type="password" formControlName="password" id="password" name="password" placeholder="Mot de passe" required>
+            </label>
+        </fieldset>
+
+        <button type="submit">S'inscrire</button>
+        
+        <p class="error" *ngIf="error">Erreur</p>
+
+        <small class="center"><a routerLink="/signin" class="secondary">Vous avez déjà un compte ?</a></small>
+    </form>
+</article>

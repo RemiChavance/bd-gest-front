@@ -1,0 +1,31 @@
+<form (ngSubmit)="onSearch()">
+    <datalist *ngIf="bds$ | async as bds" id="bdSuggestions">
+        <option *ngFor="let bd of bds" [value]="bd.title">{{ bd.isbn }}  |  {{ bd.authorDraw.name }} / {{ bd.authorScript.name }}</option>
+    </datalist>
+
+    <div class="box">
+        
+        <input
+            type="search"
+            id="search"
+            name="search"
+            placeholder="Rechercher"
+            [(ngModel)]="search"
+            (input)="onTypeSearch()"
+            autocomplete="off"
+            list="bdSuggestions"
+            
+        >
+
+        <select [(ngModel)]="selectedSearchType" name="selectedSearchType" (change)="onSelectedSearchTypeChange()">
+            <option>Titre</option>
+            <option>ISBN</option>
+            <option>Auteur</option>
+            <option>Série</option>
+        </select>
+
+        <button>Rechercher</button>
+
+    </div>
+    
+</form>

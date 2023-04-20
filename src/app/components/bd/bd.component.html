@@ -1,0 +1,16 @@
+<div *ngIf="bd$ | async as bd" class="box">
+    <img [src]="'data:image/png;base64, ' + bd.image">
+    <article>
+        <h1>{{ bd.title }}</h1>
+        <p>Dessiné par <a (click)="onAuthor(bd.authorDraw.id)">{{ bd.authorDraw.name }}</a></p>
+        <p>Scénario par <a (click)="onAuthor(bd.authorDraw.id)">{{ bd.authorScript.name }}</a></p>
+        <button *ngIf="user" (click)="onAddToMyCollection(bd.isbn)" [disabled]="added">Ajouter à ma collection</button>
+    </article>
+</div>
+
+<article *ngIf="serie$ | async as serie" class="serie-section">  
+    <h3 (click)="onSerie(serie.id)">{{ serie.title }}</h3>
+    <p>Nombre d'album : {{ serie.bds.length }}</p>
+    <h4>Dans la même série</h4>
+    <app-bd-list [bds]="serie.bds"></app-bd-list>
+</article>

@@ -1,0 +1,15 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+app-single-bd {
+    margin: 0;
+    padding: 0;
+}

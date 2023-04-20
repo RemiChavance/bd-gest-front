@@ -1,0 +1,5 @@
+<div *ngIf="author$ | async as author">    
+    <h3>{{ author.name }}</h3>
+    <button *ngIf="user" (click)="onFollow()" [disabled]="followed">Suivre</button>
+    <app-bd-list *ngIf="author.bds" [bds]="author.bds"></app-bd-list>
+</div>

@@ -1,0 +1,18 @@
+button {
+  width: fit-content;
+}
+
+#buttonclose{
+  display: block;
+  margin: 0 auto;
+}
+
+article {
+  text-align: center;
+  margin: 5%;
+  padding: 5%;
+
+  a:hover {
+    cursor: pointer;
+  }
+}

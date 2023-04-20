@@ -1,0 +1,31 @@
+article {
+    // font
+    font-weight: bold;
+    
+    // size of the article
+    padding: 0;
+    margin: 5%;
+
+    // body's size
+    body {
+        height: 10%;
+    }
+
+    // footer's size
+    footer {
+        padding: 5% 5% 5% 5%;
+        margin: 0;
+    }
+
+    // transition with hover
+    transition: all 0.2s ease-in;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(110%);        
+    }
+
+    img {
+        border-radius: 5% 5% 0 0;
+    }
+}

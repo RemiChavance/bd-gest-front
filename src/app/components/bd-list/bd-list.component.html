@@ -1,0 +1,10 @@
+<div *ngIf="bds && isCollection; else elseBlock" class="wrapper">
+    <app-single-bd-collection *ngFor="let bd of bds" [bd]="bd"></app-single-bd-collection>
+</div>
+
+<ng-template #elseBlock>
+    <div *ngIf="bds" class="wrapper">
+        <app-single-bd *ngFor="let bd of bds" [bd]="bd"></app-single-bd>
+    </div>
+</ng-template>
+

@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: calc(100vw - (100vw - 100%));
+}
+
+.body-signin {
+    background-image: url(../assets/images/wave_signin.svg);
+    background-position: bottom;
+}
+
+.body-signup {
+    background-image: url(../assets/images/wave_signup.svg);
+    background-position: bottom;
+}

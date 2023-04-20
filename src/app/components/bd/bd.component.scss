@@ -1,0 +1,41 @@
+a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.box {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+    img {
+        width: 25%;
+        height: 100%;
+    }
+
+    article {
+        margin: 2%;
+        width: 50%;
+        height: 100%;
+    }
+}
+
+.serie-section {
+    margin: 2%;
+    margin-top: 5%;
+    height: 90%;
+    text-align: center;
+
+    h3 {
+        color: #F99417;
+    
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+

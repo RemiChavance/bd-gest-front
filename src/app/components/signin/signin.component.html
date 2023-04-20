@@ -1,0 +1,21 @@
+<article>
+    <h1>Connexion</h1>
+    <form (ngSubmit)="onSubmitForm()" ngNativeValidate>
+        <fieldset>
+            <label for="username">
+                Nom d'utilisateur
+                <input type="text" [(ngModel)]="username" id="username" name="username" placeholder="Nom d'utilisateur" required>
+            </label>
+            <label for="password">
+                Mot de passe
+                <input type="password" [(ngModel)]="password" id="password" name="password" placeholder="Mot de passe" required>
+            </label>
+        </fieldset>
+
+        <button type="submit">Se connecter</button>
+        
+        <p class="error" *ngIf="error">Erreur</p>
+
+        <small><a routerLink="/signup" class="secondary">Créer un compte</a></small>
+    </form>
+</article>

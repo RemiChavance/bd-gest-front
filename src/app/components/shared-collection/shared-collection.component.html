@@ -1,0 +1,6 @@
+<div *ngIf="collection$ | async as collection">
+    <div id="partage">
+        <h3>Collection partagée</h3>       
+    </div>
+    <app-bd-list [bds]="collection"></app-bd-list>
+</div>

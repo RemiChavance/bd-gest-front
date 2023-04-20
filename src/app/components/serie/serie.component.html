@@ -1,0 +1,6 @@
+<div *ngIf="serie$ | async as serie">    
+    <h3>{{ serie.title }}</h3>
+    <p>Nombre d'album : {{ serie.bds.length }}</p>
+    <button *ngIf="user" (click)="onFollow()" [disabled]="followed">Suivre</button>
+    <app-bd-list [bds]="serie.bds"></app-bd-list>
+</div>
